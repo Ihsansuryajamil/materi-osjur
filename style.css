@@ -1,0 +1,179 @@
+/*
+ * CSS Kustom dengan Tema Warna (Universitas Al Ghifari)
+ */
+
+/* 1. Definisi Warna Tema (berdasarkan logo) */
+:root {
+    --unfari-red: #D9232D;      /* Merah dominan dari logo */
+    --unfari-yellow: #F7C02B;   /* Kuning/Emas dari logo */
+    --unfari-dark: #212529;      /* Hitam untuk teks */
+    --unfari-light-bg: #f8f9fa;  /* Latar belakang abu-abu sangat muda */
+}
+
+/* 2. Latar Belakang Body */
+body {
+    /* Memberi sedikit warna latar belakang agar card putih lebih 'pop' */
+    background-color: var(--unfari-light-bg); 
+}
+
+/* 3. Kustomisasi Navbar Utama */
+.navbar-custom {
+    background-color: var(--unfari-red); /* Latar belakang navbar jadi merah */
+}
+
+/* Teks "SlideMateri" di navbar */
+.navbar-custom .navbar-brand {
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.navbar-custom .navbar-brand:hover {
+    color: var(--unfari-yellow);
+}
+
+/* Tombol Upload (Outline) */
+.btn-outline-custom {
+    color: white;
+    border-color: white;
+}
+.btn-outline-custom:hover {
+    color: var(--unfari-red); /* Teks jadi merah */
+    background-color: white;  /* Latar jadi putih */
+    border-color: white;
+}
+
+/* Tombol Login (Solid) */
+.btn-custom-solid {
+    color: var(--unfari-dark); /* Teks gelap agar kontras di kuning */
+    background-color: var(--unfari-yellow);
+    border-color: var(--unfari-yellow);
+    font-weight: 600;
+}
+.btn-custom-solid:hover {
+    color: var(--unfari-dark);
+    background-color: #ffda63; /* Kuning sedikit lebih cerah */
+    border-color: #ffda63;
+}
+
+
+/* 4. Navbar Kategori */
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+    background-color: white; /* Tetap putih agar kontras */
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-scroller .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+    color: #6c757d; /* Abu-abu */
+}
+
+/* Link aktif di nav kategori jadi merah */
+.nav-scroller .nav-link.active {
+    font-weight: 600;
+    color: var(--unfari-red); 
+}
+
+
+/* 5. Judul "Featured" */
+.featured-title {
+    color: var(--unfari-red); /* Judul jadi merah */
+    font-weight: 600;
+    border-bottom: 2px solid #eee;
+}
+
+
+/* 6. Kartu Materi */
+.card-img-top {
+    width: 100%;
+    height: 180px; 
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.card {
+    border: none; /* Hapus border, kita pakai shadow saja */
+    transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+/* Judul pada kartu */
+.card-title {
+    color: var(--unfari-dark);
+    transition: color 0.2s ease-in-out;
+}
+
+/* Judul kartu berubah jadi merah saat card di-hover */
+.card:hover .card-title {
+    color: var(--unfari-red);
+}
+
+/* 7. Halaman Detail */
+.detail-title {
+    color: var(--unfari-red); /* Judul di halaman detail jadi merah */
+    font-weight: 600;
+}
+
+/* Wrapper untuk iframe */
+.ratio {
+    border-color: #dee2e6;
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,.05);
+}
+/*
+ * 8. Floating Action Buttons (FAB)
+ */
+
+.floating-buttons {
+    position: fixed; /* Tetap di layar */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1030; /* Di atas elemen lain */
+    display: flex;
+    flex-direction: column; /* Menumpuk ke atas */
+    gap: 10px; /* Jarak antar tombol */
+}
+
+.btn-floating {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%; /* Membuatnya bulat */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Ukuran ikon */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    
+    /* Menggunakan warna tema kita */
+    color: white;
+    background-color: var(--unfari-red); 
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-floating:hover {
+    color: white;
+    background-color: #a71b25; /* Warna merah lebih gelap saat di-hover */
+}
+
+/* Sembunyikan tombol scroll-to-top secara default */
+#scrollTopBtn {
+    display: none; 
+}
